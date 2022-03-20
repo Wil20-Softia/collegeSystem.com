@@ -1,0 +1,2079 @@
+@import 'animations.css';
+
+/*------------------SECCION PARA LAS FUENTES EN SERVIDOR---------------------------*/
+@font-face {
+  font-family: 'Hind';
+  src: url("../fonts/Hind-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'Laila';
+  src: url("../fonts/Laila-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'JosefinSans';
+  src: url("../fonts/JosefinSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Overpass';
+  src: url("../fonts/Overpass-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'PlayFairDisplay';
+  src: url("../fonts/PlayfairDisplay-Regular.ttf");
+}
+
+/*------------------TERMINA LA SECCIÓN PARA LAS FUENTES------------------------*/
+
+
+/*-----------   PROPIEDADES ESTANDARES PARA EL DOCUMENTO HTML Y EL BODY  ---------*/
+body, html{
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+
+/*---------    ACOMODANDO LA IMAGEN DE FONDO EN EL SISTEMA   --------------------*/
+body > img, .imagen_fondo{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: -100;
+}
+
+#seccion_login{
+	background-image: url("../img/fondo_login.jpg");
+	background-size: 100% 654px;
+}
+
+.cuadrado_base{
+	width: auto;
+	height: 654px;
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; 
+}
+
+/*------------HACIENDO BLOQUES ALGUNOS ELEMENTOS------------------------------*/
+img, header, h1, h2, h3, nav, ul, li, #seccion_impresion{
+	display: block;
+}
+
+/*RESETEANDO EL OBJETO BOTON EN SU MARGIN Y FUENTE.*/
+button{
+	margin: 0;
+	font-family: Hind;
+}
+
+/*-----------    ACOMODANDO LA CABECERA DEL SISTEMA  ---------------------------*/
+header{
+	float: left;
+	width: 100%;
+	height: 20%;
+	padding: 10px 0 10px 2%;
+	opacity: 0.5 inherit;
+}
+
+
+
+/*--------------   IMAGENES DE LA CABECERA FLOTAN A LA IZQUIERDA   ------------*/
+header > img{
+	float: left;
+	opacity: 1;
+}
+
+/*------ANCHO Y ALTO IGUAL PARA LAS IMAGENES DE LAS EZQUINAS DE LA CABECERA----------*/
+#img_header1, #img_header3{
+	width: 13%;
+	height: 100%;
+}
+
+/*----------ANCHO Y ALTO PARA LA IMAGEN DEL MEDIO DE LA CABECERA---------------------*/
+#img_header2{
+	width: 68%;
+	height: 100%;
+}
+
+/*--------ACOMODANDO LA SECCION PRINCIPAL DEL SISTEMA, CONTIENE LA BARRA DE 
+----------NAVEGACION Y LA SECCION DINAMICA----------------------------------
+#seccion_principal{
+	float: left;
+	width: 100%;
+	height: 80%;
+	border: 1px solid black;
+}
+*/
+
+/*-----------COLOCANDO EL TIPO DE LETRA A LOS BOTONES Y ENLACES, HACIENDO 
+-------------CLICKEABLE A LOS MISMOS----------------------------------------*/
+a, input[type="submit"], input[type="button"], button{
+	cursor: pointer;
+	font-family: Laila;
+	letter-spacing: 1px;
+}
+
+
+/*------------AL ELEMENTO A CUANDO SE LE PASA EL MOUSE POR 
+--------------ENCIMA SE LE ELIMINA EL SUBRAYADO POR DEFECTO-----------------*/
+a:hover{
+	text-decoration: none;
+	color: black;
+}
+
+/*-----------BARRA DE NAVEGACIÓN ACOMODANDOLA EN LA SECCION PRINCIPAL.-----------*/
+nav{
+	width: 100%;
+	height: 10%;
+	padding: 0;
+    background: #0876a7;
+	/*border: 1px solid black;*/
+	float: left;
+}		
+
+/*------ELIMINANDO EL MARGIN A LOS "LI" QUE CONTIENEN A CADA ENLACE
+--------DE LA BARRA DE NAVEGACIÓN-----------------------------------------------*/
+nav > ul > li{
+	margin: 0;
+}
+
+
+/*-----------------AQUI COMIENZA LA MODIFICACION DE LOS ENLACES DE LA BARRA------*/
+
+/*APLICANDO CAMBIOS A LOS ENLACES DE LA BARRA DE NAVEGACIÓN.*/
+.nav > .nav-item > .nav-link{
+	width: 100%;
+	font-weight: 700 !important;
+}
+
+.btn-nvertical{
+	background: -webkit-linear-gradient(#FFF, #CCC 90%);
+	background: -o-linear-gradient(#FFF, #CCC 90%);
+	background: linear-gradient(#FFF, #CCC 90%);
+	border-bottom: 1px solid #fff;
+	border-top: 1px solid #686d69;
+}
+
+.nav-link:hover{
+	background-color: #B02626;
+	color: #FFF;
+}
+
+.nav-link:active{
+	box-shadow: 1px 1px 2px 2px #000 inset, -1px -1px 2px 2px #000 inset;
+	background: #FFF;
+	color: #151514;
+	padding-top: 1em;
+	text-align: center;
+	font-size: 1em;
+	text-shadow: 4px 4px 5px #835905;
+}
+/*----------------AQUI TERMINA LA MODIFICACION A LOS ENLACES DE LA BARRA-----------*/
+
+/*----------CAMPO DE BUSQUEDA: AGREGANDO LOS ESTILOS CORRESPONDIENTES------------*/
+.busqueda{
+	width: 100%;
+	height: 90%;
+	font-family: Hind;
+	font-size: 14pt;
+	font-weight: 200;
+}
+
+/*------CAMPO DE BUSQUEDA: COLOR DE SOMBRA CUANDO SE TIENE ENFOCADO EL CAMPO-----*/
+.busqueda:focus{
+	border: 2px solid #49b0f7;
+}
+
+/*-------BOTON DE BUSQUEDA: AGREGANDO LOS ESTILOS AL BOTON DE BUSQUEDA-------*/
+.btn-busqueda, .btn-pq{
+	display: inline-flex;
+	clear: both;
+	padding: .3em .6em !important;
+	text-align: center;
+	width: auto;
+	height: 100%;
+	font-family: Laila;
+	font-size: 1em;
+	font-weight: lighter;
+}
+
+.btn-busqueda{
+	background: #4c677f;
+	color: #FFF;
+	border: 1px solid #122e5c;
+}
+
+/*-------------BOTON DE BUSQUEDA: AGREGANDO ESTILOS CUANDO SE COLOCA 
+POR ENCIMA EL PUNTERO DEL MOUSE-------------------------------------------*/
+.btn-busqueda:hover{
+	background: #FFF;
+	color: #4c677f;
+	border: 2px solid #4c677f;
+}
+/*----AQUI TERMINA LA REMODELACION DE LA PARTE DE BUSQUEDA DE LA BARRA DE NAVEGACION----*/
+
+
+/*--------ESTA SECCIÓN ES DE IMPRESIÓN, ES LA SECCIÓN DINAMICA---------------------*/
+#seccion_impresion{
+	float: left;
+	width: 100%;
+	height: 90%;
+	margin: 0;
+}
+
+.caja-btn-icono{
+	text-align: center;
+	padding-top: .4em;
+	font-size: 1.8em;
+	font-weight: 300;
+}
+
+.btn-icon-verde{
+	color: #07991b !important;
+}
+
+.btn-icon-rojo{
+	color: #c72f09 !important;
+}
+
+.btn-icon-verde:hover, .btn-icon-rojo:hover{
+	font-size: 1.2em;
+	opacity: .9;
+	text-shadow: 3px 3px 10px #000;
+	-webkit-text-shadow: 3px 3px 10px #000;
+	-moz-text-shadow: 3px 3px 10px #000;
+	-o-text-shadow: 3px 3px 10px #000;
+}
+
+/*BOTON VER PLANILLA: COLOR DE FUENTE*/
+.btn-ver-planilla{
+	color: #4c677f !important;
+}
+
+/*BOTON MODIFICAR: COLOR DE FUENTE*/
+.btn-modificar-empresa{
+	color: #07991b !important;
+}
+
+
+/*BOTON ELIMINAR: COLOR DE FUENTE*/
+.btn-eliminar-empresa{
+	color: #c72f09 !important;
+}
+
+/*AL SITUAR EL PUNTERO ENCIMA DEL BOTON VER PLANILLA*/
+.btn-ver-planilla:hover, .btn-eliminar-empresa:hover, .btn-modificar-empresa:hover{
+	font-size: 1.2em;
+	opacity: .9;
+	text-shadow: 3px 3px 10px #000;
+	-webkit-text-shadow: 3px 3px 10px #000;
+	-moz-text-shadow: 3px 3px 10px #000;
+	-o-text-shadow: 3px 3px 10px #000;
+}
+
+
+/*COLOCANDO GROSOR DE LETRA A LOS PRIMERO 5 CAMPOS DE LA LISTA
+Y LA CLASE FILA-H8 UTILIZADA EN EL LISTADO DE FACTURAS DIARIAS.*/
+
+
+/*CONTENDORES QUE TIENEN DENTRO A LOS BOTONES DE ATRAS Y ADELANDTE
+RESPECTIVAMENTE.*/
+#primeros, #ultimos{
+	display: block;
+	float: left;
+	width: 20%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/*AGREGANDO TAMAÑO Y POSICIONAMIENTO A CADA UNO DE LOS CONTENDORES
+ENLACES QUE SON LOS BOTONES RESPECTIVOS DE LA PAGINACIÓN.*/
+#atras-empresa, #siguiente-empresa, #primero-empresa, #ultimo-empresa{
+	width: 50%;
+	height: 100%;
+	display: block;
+	float: left;
+	padding: 0;
+	margin: 0;
+	font-size: 2rem;
+	color: #FFF;
+}
+
+/*CUANDO SE LE COLOCA EL PUNTERO ENCIMA DE ELLOS CAMBIA LA LETRA DE COLOR*/
+#atras-empresa:hover, #siguiente-empresa:hover, #primero-empresa:hover, #ultimo-empresa:hover{
+	color: #000;
+}
+
+/*CONTENDOR QUE TENDRA DENTRO A LOS NUMEROS DE LAS PAGINAS EXISTENTES,
+HASTA 5 NUMEROS MAXIMO.*/
+#numeros-paginas{
+	display: block;
+	float: left;
+	width: 60%;
+	height: 100%;
+	margin: 0; 
+	padding: 0;
+}
+
+/*ESTAS CLASES SON LAS QUE VAN DENTRO DEL CONTENEDOR NUMEROS-PAGINAS,
+UNA ES LA QUE ESTILIZA NORMALMENTE A LOS NUMEROS Y A LOS BOTONES DE PAGINACION,
+Y LA OTRA QUE TERMINA EN ACTIVE, SOLO SE COLOCA AL NUMERO ACTUAL DE LA PAGINA.*/
+.num_pag, .num_pag-active{
+	display: block;
+	float: left;
+	width: 16%;
+	height: 95%;
+	margin: .2% 2% 0 2%;
+	font-family: JosefinSans;
+	font-weight: 800;
+	font-style: italic;
+	text-align: center;
+}
+
+/*NUMERO DE PAGINA: ESPACIO INTERNO, COLOR DE LETRA Y TAMAÑO DE FUENTE.*/
+.num_pag{
+	padding: .4% 0 0 .5%;
+	color: #FFF;
+	font-size: 20pt;
+}
+
+/*NUMERO DE PAGINA ACTUAL: ESTILIZACIÓN DEL MISMO PARA QUE SE NOTE LA
+DIFERENCIA CON EL COLOR DE LA PAGINACION.*/
+.num_pag-active{
+	position: relative;
+	z-index: 1;
+	padding: 0;
+	background-color: #FFF;
+	color: #0876a7;
+	font-size: 22pt;
+	box-shadow: 1px 1px 3px 4px #000;
+}
+
+/*PUNTERO POR ENCIMA DE: NUMERO DE PAGINA Y PAGINA ACTUAL, CAMBIA EL COLOR
+DE LA LETRA O FUENTE.*/
+.num_pag:hover, .num_pag-active:hover{
+	color: #000;
+}
+
+/*CONTENDOR EN DONDE SE IMPRIMEN LAS FACTURAS DIARIAS CON UN VALOR
+DE HASTA 8 REGISTROS SOPORTADOR POR PAGINA. AQUI SOLO SE CAMBIA
+EL COLOR DEL FONDO.*/
+
+/*----------SE DEFINE LA CLASE PARA SER UTILIZADA EN EL CONTENDOR PRINCIPAL DE
+UNA TABLA PARA QUE LAS FILAS PARES SALGAN DE UN COLOR Y LAS OTRA DE
+OTRO COLOR-------------------------------------------------------*/
+.col-int-ver-blan>div:nth-child(even){
+	background-color: rgba(61,216,94,.8);
+}
+
+.col-int-ver-blan>div:nth-child(odd){
+	background-color: rgba(255,255,255,.8);
+}
+
+.fila-int-ver-blan>div:nth-child(even){
+	background-color: #FFF;
+	color: #000;
+}
+
+.fila-int-ver-blan>div:nth-child(odd){
+	background-color: #86e59a;
+	color: #000;
+}
+
+.fila-int-azul-gris>div:nth-child(even){
+	background-color: rgba(148,173,157,.8);
+}
+
+.fila-int-azul-gris>div:nth-child(odd){
+	background-color: rgba(71,186,236,.8);;
+}
+
+.fila-int-rojo-gris>div:nth-child(even){
+	background-color: #a5a5a4;
+	color: #FFF;
+}
+
+.fila-int-rojo-gris>div:nth-child(odd){
+	background-color: #f28a6b;
+	color: #FFF;
+}
+
+.fila-int-gris-azulado>div:nth-child(odd){
+	background: #607d8b;
+	color: #FFF;
+
+}
+
+.fila-int-gris-azulado>div:nth-child(even){
+	background: #686d69;
+	color: #FFF;
+}
+
+.fila-int-gris-blan>div:nth-child(odd){
+	background: #FFF;
+	color: #686d69;
+
+}
+
+.fila-int-gris-blan>div:nth-child(even){
+	background: #686d69;
+	color: #FFF;
+}
+
+.fila-int-grisclaro-blan>div:nth-child(odd){
+	background: #FFF;
+	color: #686d69;
+
+}
+
+.fila-int-grisclaro-blan>div:nth-child(even){
+	background: #a5a5a4;
+	color: #FFF;
+}
+
+.fila-int-dark>div{
+	background-color: #343a40;
+	color: #FFF;
+}
+
+.fila-hover-gris-azulado>div:hover{
+	background-color: #607d8b;
+	color: #FFF;
+}
+
+.fila-hover-blan>div:hover{
+	background-color: #FFF;
+	color: #000;
+}
+
+.fila-hover-gris>div:hover{
+	background-color: #a5a5a4;
+	color: #FFF;
+}
+
+.fila-hover-gris-boots>div:hover{
+	background-color: #686d69;
+	color: #FFF;
+}
+
+.fila-vinotinto-blanco{
+	background-color: #b82e06;
+	color: #FFF;
+}
+
+.fila-gris-blanco{
+	background: #4c677f;
+	color: #FFF;
+}
+
+.fila-verde-blanco{
+	background-color: #06b849;
+	color: #FFF;
+}
+
+/*------------AQUI TERMINA----------------------------------------*/
+
+/*CLASE QUE SE UTILIZA PARA DAR ESTILO A UN 
+TITULO DE FORMULARIO O CUALQUIER RECUADRO*/
+.titulo-formulario{
+	font-size: 2.2vw;
+	font-weight: 600;
+	font-family: JosefinSans;
+	text-align: left;
+	padding-left: 2%;
+}
+
+/*CLASE QUE SE UTILIZA PARA DAR ESTILO A UN 
+SUBTITULO DE FORMULARIO O CUALQUIER RECUADRO*/
+.subtitulo-formulario-pq{
+	font-size: 1.3rem;
+	font-weight: lighter;
+	font-family: JosefinSans;
+	padding-left: 1.5%;
+}
+
+.subtitulo-formulario-pqm{
+	font-size: 1.6rem;
+	font-weight: lighter;
+	font-family: JosefinSans;
+	padding-left: 1.5%;
+}
+
+.txt-mediano-der{
+	font-size: 1.6rem;
+	font-weight: lighter;
+	font-family: Overpass;
+	text-align: right;
+	padding-top: .4em;
+}
+
+.txt-uf20,.txt-mf20,.txt-mmf20,.txt-mmf20-arrb{
+	font-family: Laila;
+}
+
+.txt-uf20{
+	font-size: 1em;
+	text-align: center;
+	padding-top: 1.3em;
+}
+
+.txt-mf20, .txt-mmf20, .txt-mmf20-arrb{
+	text-align: left;
+	padding-left: .2em;
+	overflow: hidden;
+}
+
+.txt-mf20{
+	font-size: 1.3vw;
+	padding-top: .6em;
+}
+
+.txt-mmf20{
+	font-size: .9em;
+	padding-top: .225em;
+}
+
+.txt-mmf20-arrb{
+	text-align: center;
+	font-size: .9em;
+	padding-top: .8em;
+}
+
+/*CLASE QUE SE PUEDE UTILIZAR PARA ESTABLECER EL TEXTO DE LA CABECERA DE
+UNA TABLA*/
+.texto-subrayado{
+	text-decoration: underline;
+}
+
+.texto-cabecera, .texto-cabecera-tabla{
+	text-align: center;
+	font-family: JosefinSans;
+}
+
+.texto-cabecera{
+	font-size: 1.4em;
+	font-weight: 500;
+	padding-top: .8em;
+}
+
+.texto-titulo-secciones{
+	text-align: center;
+	font-family: JosefinSans;
+	font-size: 1.7vw;
+	font-weight: 600;
+}
+
+.texto-cabecera-tabla{
+	font-size: 1.5vw;
+	font-weight: 400;
+}
+
+.texto-justificado{
+	text-align: justify;
+}
+
+.texto-centrado{
+	text-align: center;
+}
+
+.texto-izquierdo{
+	text-align: left;
+}
+
+.texto-derecho{
+	text-align: right;
+}
+
+.txt-pq{
+	font-size: 1.11em;
+}
+
+.txt-ppq{
+	font-weight: bold;
+	font-size: .9vw;
+}
+
+.txt-light-xl, .txt-bold-xl{
+	font-size: 2em;
+	font-family: PlayFairDisplay;
+}
+
+
+.txt-light-pq, .txt-bold-pq{
+	font-size: 1.35vw;
+	font-family: PlayFairDisplay;
+}
+
+.txt-arial-light-pq, .txt-arial-bold-pq{
+	font-size: 1.37vw;
+	font-family: Arial;
+}
+
+.txt-arial-light-spq, .txt-arial-bold-spq{
+	font-size: 1.13vw;
+	font-family: Arial;
+}
+
+.txt-light-spq, .txt-bold-spq{
+	font-size: 1.1vw;
+	font-family: PlayFairDisplay;
+}
+
+.txt-bold-men, .txt-light-men{
+	font-size: 1.8vw;
+	font-family: PlayFairDisplay;
+}
+
+.txt-light-pq, .txt-arial-light-pq, .txt-arial-light-spq, .txt-light-xl, .txt-light-men, .txt-light-spq{
+	font-weight: lighter;
+}
+
+.txt-bold-pq, .txt-arial-bold-pq, .txt-arial-bold-spq, .txt-bold-xl, .txt-bold-men, .txt-bold-spq{
+	font-weight: bold;
+}
+
+.txt-oscuro{
+	font-weight: 700;
+}
+
+.texto-bln-sombra-ngr{
+	color: #fff;
+	text-shadow: 5px 5px 6px #000;
+}
+
+.texto-ngr-sombra-bln{
+	color: #000;
+	text-shadow: 5px 5px 6px #fff;
+}
+
+/*TEXTO CENTRADO MEDIANO*/
+.txcmd{
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+/*TEXTO MOVIDO A LA DERECHA MEDIANO*/
+.txrmd{
+	padding-top: 1.5%;
+	padding-left: 1.7%;
+	font-size: 1.3rem;
+	font-weight: 600;
+}
+
+.texto_rojo{
+	color: #dc3545;
+}
+
+.texto-vinotinto{
+	color:#D25C5C;
+}
+
+.izquierda{
+	float: left;
+	margin-left: 2%;
+}
+
+.derecha{
+	float: right;
+	margin-right: 2%;
+}
+
+.boton-importante{
+	text-align: center;
+	display: inline-block;
+	width: 40%;
+	height: auto;
+	padding: 1%;
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.input-transparente-blanco{
+	background-color: rgba(255,255,255,.1);
+	border: 0;
+	border-bottom: 2px solid #FFF;
+	color: #FFF;
+}
+
+.input-transparente-negro{
+	background-color: rgba(255,255,255,.1);
+	border: 0;
+	border-bottom: 2px solid #000;
+	color: #000;
+}
+
+.textarea-transparente-blanco{
+	background-color: rgba(255,255,255,.1);
+	border: 2px solid #FFF;
+	color: #FFF;
+}
+
+.btn-verde, .btn-blanco, .btn-naranja-fp, .btn-azul, .btn-azul-izq, .btn-azul-drch, .btn-naranja, .btn-rojo{
+	display: block;
+	position: absolute;
+	width: auto;
+	height: auto;
+	padding: .5em 1.1em;
+	z-index: 50;
+}
+
+.btn-verde, .btn-blanco, .btn-azul-izq, .btn-azul-drch, .btn-naranja, .btn-rojo{
+	top: .12542em;
+	font-size: 1.1vw;
+}
+
+.btn-verde-ico, .btn-rojo-ico{
+	top: .12542em;
+	font-size: 2vw;
+	font-weight: 800;
+}
+
+.btn-naranja-fp{
+	top: 1em;
+	font-size: .70rem;
+}
+
+.btn-naranja-fp{
+	color: #FFF;
+	float: left;
+	background: #f07533;
+	border: 2px solid #c65308;
+	border-radius: 5px;
+}
+
+.btn-verde{
+	color: #FFF;
+	float: left;
+	background: #31d053;
+	border: 2px solid #07611a;
+	border-radius: 5px;
+}
+
+.btn-blanco{
+	color: #000;
+	float: left;
+	background: #FFF;
+	border: 2px solid #FFF;
+}
+
+.btn-verde-ico{
+	color: #31d053;
+	float: left;
+	background: #FFF;
+	border: 2px solid #07611a;
+	border-radius: 5px;
+}
+
+.btn-rojo-ico{
+	color: #ed4f38;
+	float: left;
+	background: #FFF;
+	border: 2px solid #a21905;
+	border-radius: 5px;
+}
+
+.btn-rojo{
+	color: #FFF;
+	float: left;
+	background: #ed4f38;
+	border: 2px solid #a21905;
+	border-radius: 5px;
+}
+
+.btn-azul{
+	color: #FFF;
+	float: left;
+	background: #1474df;
+	border: 2px solid #08478c;
+	border-radius: 5px;
+}
+
+.btn-naranja{
+	color: #FFF;
+	float: left;
+	background: #f07533;
+	border: 2px solid #c65308;
+	border-radius: 5px;
+}
+
+.margen-btn-col9{
+	margin: .25em .25em;
+}
+
+.btn-azul-izq, .btn-azul-drch{
+	color: #FFF;
+	background-color: #1474df;
+	border: 2px solid #08478c;
+}
+
+.btn-azul-izq{
+	float: left;
+	margin-top: .15em;
+	margin-left: .6em;
+}
+
+.btn-azul-drch{
+	float: right;
+	margin-top: .15em;
+	right: .25em;
+}
+
+.btn-azul-izq:active, .btn-azul:active, .btn-azul-drch:active, .btn-verde:active, .btn-blanco:active,.btn-rojo:active{
+	box-shadow: 1px 0 5px 1px #000 inset, 0 1px 5px 1px #000 inset;
+	border: 1px solid #000;
+	color: #FFF;
+	text-shadow: 4px 4px 5px #835905;
+}
+
+/*PUNTERO POR ENCIMA DE LOS BOTONES NARANJAS.*/
+.hover-naranja-blanco:hover{
+	border: 3px solid #e68143;
+	color: #e68143;
+	text-shadow: 1px 1px 1px #FFF;
+	font-weight: 500;
+	background-color: #FFF;
+}
+
+/*ESTILIZACION DE LOS RADIO BUTTONS Y LOS CHECKBOX*/
+.option-input{
+	height: 20px;
+  	width: 20px;
+}
+
+.option-input-30{
+	height: 30px;
+  	width: 30px;
+}
+
+.option-input-completo{
+	height: 80%;
+  	width: 80%;
+}
+
+.option-input, .option-input-30, .option-input-completo{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 1px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all 0.15s ease-out 0s;
+  background: #fff;
+  border: 2px solid #cbd1d8;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: .5rem;
+  margin-left: 2px;
+  outline: none;
+  z-index: 1000;
+}
+
+.option-input:hover, .option-input-30:hover, .option-input-completo:hover{
+  background: #9faab7;
+}
+
+.option-input:checked, .option-input-30:checked, .option-input-completo:checked{
+  background: #31d053;
+  box-shadow: 1px 1px 2px 2px #000 inset;
+}
+
+.option-input:checked::before{
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 1em;
+  padding: 0 .2em;
+  line-height: 15px;
+}
+
+.option-input-30:checked::before{
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 1.6em;
+  padding: 0 .2em;
+  line-height: 20px;
+}
+
+.option-input-completo:checked::before{
+  height: 85%;
+  width: 85%;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 1.3em;
+  padding: .1em .4em;
+  line-height: .5em;
+}
+
+.option-input:checked::after, .option-input-30:checked::after{
+  	-webkit-animation: click-wave 0.65s;
+  	-moz-animation: click-wave 0.65s;
+  	animation: click-wave 0.65s;
+  	background: #31d053;
+  	content: '';
+  	display: block;
+  	position: relative;
+  	z-index: 100;
+}
+
+.option-input-completo:checked::after{
+  	-webkit-animation: click-wave-porcen 0.65s;
+  	-moz-animation: click-wave-porcen 0.65s;
+  	animation: click-wave-porcen 0.65s;
+  	background: #31d053;
+  	content: '';
+  	display: block;
+  	position: relative;
+  	z-index: 100;
+}
+
+.option-input.radio, .option-input-30.radio, .option-input-completo.radio{
+  border-radius: 50%;
+}
+
+.option-input.radio::after, .option-input-30.radio::after, .option-input-completo.radio::after{
+  border-radius: 50%;
+}
+
+.hover-blanco-azul:hover{
+	background: #FFF;
+	color: #0876a7;
+	border: 2px solid #0876a7;
+}
+
+.hover-blanco-naranja:hover{
+	background: #FFF;
+	color: #f07533;
+	border: 2px solid #f07533;
+}
+
+.hover-blanco-verde:hover{
+	background: #FFF;
+	color: #09a52a;
+	border: 2px solid #09a52a;
+}
+
+.active-azul-blanco:active{
+	background: #0876a7;
+	color: #FFF;
+}
+
+.active-naranja-blanco:active{
+	background: #f07533;
+	color: #FFF;
+}
+
+.active-verde-blanco:active{
+	background: #09a52a;
+	color: #FFF;
+}
+
+/*AQUI TERMINA LA ESTILIZACION*/
+.fondo-azul-blanco{
+	background: #0876a7;
+	color: #FFF;
+}
+
+.fondo-blanco-transparente{
+	background-color: rgba(255,255,255,.5)
+}
+
+.fondo-verde-blanco{
+	background: #09a52a;
+	color: #FFF;
+}
+
+.fondo-naranja-blanco{
+	background: #f07533;
+	color: #FFF;
+}
+
+.fondo-degradado-grisblanco{
+  background: linear-gradient(#FFF, #CCC 90%, #FFF);
+  background: -webkit-linear-gradient(#FFF, #CCC 90%, #FFF);
+  background: -moz-linear-gradient(#FFF, #CCC 90%, #FFF);
+}
+
+.fondo-degradado-vertical-azulblanco{
+	background: rgba(32,124,229,0.38);
+background: -moz-linear-gradient(left, rgba(32,124,229,0.38) 33%, rgba(32,124,229,0.61) 51%, rgba(73,155,234,0.87) 72%, rgba(73,155,234,1) 82%);
+background: -webkit-gradient(left top, right top, color-stop(33%, rgba(32,124,229,0.38)), color-stop(51%, rgba(32,124,229,0.61)), color-stop(72%, rgba(73,155,234,0.87)), color-stop(82%, rgba(73,155,234,1)));
+background: -webkit-linear-gradient(left, rgba(32,124,229,0.38) 33%, rgba(32,124,229,0.61) 51%, rgba(73,155,234,0.87) 72%, rgba(73,155,234,1) 82%);
+background: -o-linear-gradient(left, rgba(32,124,229,0.38) 33%, rgba(32,124,229,0.61) 51%, rgba(73,155,234,0.87) 72%, rgba(73,155,234,1) 82%);
+background: -ms-linear-gradient(left, rgba(32,124,229,0.38) 33%, rgba(32,124,229,0.61) 51%, rgba(73,155,234,0.87) 72%, rgba(73,155,234,1) 82%);
+background: linear-gradient(to right, rgba(32,124,229,0.38) 33%, rgba(32,124,229,0.61) 51%, rgba(73,155,234,0.87) 72%, rgba(73,155,234,1) 82%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207ce5', endColorstr='#499bea', GradientType=1 );
+}
+
+.fondo-degradado-negroblanco{
+  background: linear-gradient(#FFF, #343a40 95%);
+  background: -webkit-linear-gradient(#FFF, #343a40 95%);
+  background: -moz-linear-gradient(#FFF, #343a40 95%);
+}
+
+.fondo-degradado-naranjablanco{
+  background: linear-gradient(#FFF, #fdb96d 50%, #FFF);
+  background: -webkit-linear-gradient(#FFF, #fdb96d 50%, #FFF);
+  background: -moz-linear-gradient(#FFF, #fdb96d 50%, #FFF);
+}
+
+.fondo-degradado-verdeblanco{
+  background: linear-gradient(#FFF, #31d053 70%, #FFF);
+  background: -webkit-linear-gradient(#FFF, #31d053 70%, #FFF);
+  background: -moz-linear-gradient(#FFF, #31d053 70%, #FFF);
+}
+
+.letra-azul{
+	color: #070b83;
+}
+
+.texto-azul-claro{
+	color: #39A8DC;
+}
+
+.hijos-letra-negra>option{
+	color: #000;
+}
+
+.texto-naranja-claro{
+	color: #fdb96d;
+}
+
+.fondo-azul-celeste{
+	background-color: #569DD8;
+}
+
+.fondo_gris{
+	background-color: #a5a5a4;
+}
+
+.fondo-gris-rosaseo{
+	background-color: #F1A47D;
+	color: #000;
+}
+
+.fondo-vinotinto-oscuro{
+	background-color: #B02626;
+	color: #FFF;
+}
+
+.fondo-vinotinto-claro{
+	background-color: #D25C5C;
+	color: #FFF;
+}
+
+.fondo-azul-verdoso{
+	background-color: #80cbc4;
+}
+
+.fondo-marron{
+	background-color: rgba(161, 136, 127,1);
+}
+
+.fondo-gris-azulado{
+	background-color: #607d8b;
+}
+
+.fondo-azul-celeste2{
+	background-color: #309DD6;
+}
+
+.fondo-gris{
+	background-color: rgba(179,184,180,.7);
+}
+
+.fondo-gris-amarillento{
+	background-color: #F1F0CA;
+	color: #000;
+}
+
+.fondo-gris-amarillento-claro{
+	background-color: #F5F4D3;
+	color: #000;
+}
+
+.fondo-importante-naranja-formulario{
+	background-color: #fdb96d;
+}
+
+.fondo-claro-naranja{
+	background-color: #fad4a8;
+}
+
+.fondo-amarillo-formulario{
+	background-color: rgba(252,244,190,.7);
+}
+
+.fondo-naranja-blanco{
+	background-color: #F79953;
+	color: #FFF;
+	box-shadow: 0px 0px 10px 10px #414141;
+}
+
+.fondo-informativo{
+	color: #fff;
+	text-shadow: 5px 5px 6px #000;
+	border: 3px solid #000;
+	box-shadow: 3px 3px 10px 7px #000;
+  	background: #17a2b8;
+}
+
+.fondo-verde-ocuro{
+	background-color: #0F9B53;
+}
+
+.fondo-gris-claro{
+	background-color: #d5d8dc;
+}
+
+.bg-light-transparente{
+	background-color: rgba(248,249,250,.9);
+}
+
+.opaco-moderado{
+	opacity: .80;
+}
+
+.alerta-exitosa{
+	color: #fff;
+	text-shadow: 5px 5px 6px #000;
+	border: 3px solid #28a745;
+	box-shadow: 3px 3px 10px 7px #000;
+	background: #28a745;
+}
+
+.alerta-peligro{
+	color: #fff;
+	text-shadow: 5px 5px 6px #000;
+	border: 3px solid #ffc107;
+	box-shadow: 3px 3px 10px 7px #000;
+	background: #ffc107;
+}
+
+.alerta-error{
+	color: #fff;
+	text-shadow: 5px 5px 6px #000;
+	border: 3px solid #dc3545;
+	box-shadow: 3px 3px 10px 7px #000;
+	background: #dc3545;
+}
+
+/******************************************************************************/
+/******************* BORDES ESTILIZADOS Y MODULARIZADOS ***********************/
+/******************************************************************************/
+.bd-completo{
+	border-width: 1px;
+	border-style: solid;
+}
+
+.bd-iz-ar-de{
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-right-width: 1px;
+	border-right-style: solid;
+}
+
+.bd-iz-de{
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-right-width: 1px;
+	border-right-style: solid;
+}
+
+.bd-iz-ar-ab{
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+.bd-de-ar-ab{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-right-width: 1px;
+	border-right-style: solid;
+}
+
+.bd-iz-ab-de{
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-right-width: 1px;
+	border-right-style: solid;
+}
+
+.bd-ar-ab{
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+.bd-iz{
+	border-left-width: 1px;
+	border-left-style: solid;
+}
+
+.bd-de{
+	border-right-width: 1px;
+	border-right-style: solid;
+}
+
+.bd-ar{
+	border-top-width: 1px;
+	border-top-style: solid;
+}
+
+.bd-ab{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+.bd-negro{
+	border-color: #000;
+}
+
+.bd-blanco{
+	border-color: #FFF;
+}
+
+.bd-naranja{
+	border-color: #d35400;
+}
+
+.bd-gris{
+	border-color: #686d69;
+}
+
+.bd-azul-claro{
+	border-color: #39A8DC;
+}
+
+.bd-1p{
+	border-width: 1px;
+}
+
+.bd-2p{
+	border-width: 2px;
+}
+
+.bd-3p{
+	border-width: 3px;
+}
+/******************************************************************************/
+/*********** TERMINAN BORDES ESTILIZADOS Y MODULARIZADOS **********************/
+/******************************************************************************/
+
+.borde-abajo-3p-gris{
+	border-bottom: 3px solid #686d69;
+}
+
+.borde-arriba-3p-gris{
+	border-top: 3px solid #686d69;
+}
+
+.borde-derecho-3p-gris{
+	border-right: 3px solid #686d69;
+}
+
+.borde-izquierdo-3p-gris{
+	border-left: 3px solid #686d69;
+}
+
+.borde-abajo-2p-gris{
+	border-bottom: 2px solid #686d69;
+}
+
+.borde-dercho-2p-gris{
+	border-right: 2px solid #686d69;
+}
+
+.borde-izquierdo-2p-gris{
+	border-left: 2px solid #686d69;
+}
+
+.borde-arriba-2p-gris{
+	border-top: 2px solid #686d69;
+}
+
+.borde-abajo-2p-blanco{
+	border-bottom: 2px solid #FFF;
+}
+
+.borde-arriba-2p-blanco{
+	border-top: 2px solid #FFF;
+}
+
+.borde-laterales-2p-blanco{
+	border-right: 2px solid #FFF;
+	border-left: 2px solid #FFF;
+}
+
+.borde-naranja-oscuro{
+	border: 2px solid #ec7f04;
+}
+
+.borde-verde-oscuro{
+	border: 2px solid #07611a;
+}
+
+.borde-caja-moderado{
+	border-radius: 5px;
+}
+
+.bordes-redondeados-arriba{
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.bordes-redondeados-abajo-30{
+	border-bottom-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+}
+
+.borde-abajo-texto{
+	border-bottom:3px solid #000;
+	border-top:0;
+	border-left:0;
+	border-right:0;
+	background-color: rgba(255,255,255,.2);
+}
+
+.bd-null{
+	border: 0;
+}
+
+.bd-1p-bln{
+	border: 1px solid #fff;
+}
+
+.bd-2p-bln{
+	border: 2px dotted #fff;
+}
+
+.bd-1p-ngr{
+	border: 1px solid #000;
+}
+
+.bd-2p-ngr{
+	border: 2px solid #000;
+}
+
+.sombra-negra-caja{
+	box-shadow: 2px 2px 10px 5px #000;
+}
+
+.scrolleable{
+	overflow: auto;
+}
+
+.posicion_relativa{
+	position: relative;
+}
+
+/*DEFINIENDO EL ALTO DE LAS COLUMNAS Y FLOTANDOLAS A LA IZQUIERDA*/
+.columna-ssmall, .columna-1, .columna-9-con16, .columna-10, .columna-12, .columna-25, .columna-2, .columna-3, .columna-4, .columna-45, .columna-5, .columna-6, .columna-65, .columna-90, .columna-200, .column-12-12, .column-11-12, .column-10-12, .column-9-12,  .column-9m-12, .column-8-12, .column-8m-12, .column-7-12, .column-6-12, .column-5-12, .column-4-12, .column-3-12, .column-2-12, .column-2m-12, .column-1-12, .column-1m-12,.column-m-12, .column-3m-12, .column-11m-12{
+	display: block;
+	float: left;
+	height: 100%;
+	position: relative;
+}
+
+/*DEFINIENDO EL ANCHO A LAS FILAS Y FLOTANDOLAS A LA IZQUIERDA.*/
+.fila-final, .fila-h1, .fila-h2, .fila-h25,.fila-h30, .fila-h3, .fila-h4, .fila-h5, .fila-h6, .fila-h7, .fila-h75, .fila-h8, .fila-h80, .fila-h90, .fila-h10, .fila-tercio, .fila-dos-tercio,.r-hm, .r-h1,.r-h1m,.r-h2,.r-h3, .r-h3m, .r-h4,.r-h5,.r-h6,.r-h7,.r-h8,.r-h9, .r-h9m,.r-h10, .r-h10m,.r-h11,.r-h12{
+	width: 100%;
+	display: block;
+	float: left;
+	position: relative;
+}
+
+.fila-auto{
+	width: 100%;
+	height: auto;
+	display: inline-flex;
+	margin: 0;
+	position: relative;
+}
+
+.fila-tercio{
+	height: 33.33333%;
+}
+
+.fila-dos-tercio{
+	height: 66.66666%;
+}
+
+.fila-final{
+	margin: .1em 0;
+	text-align: center;
+	padding: .5% 0;
+	height: auto;
+}
+
+/*FILA DEL DECIMO DE ALTO DEL CONTENEDOR PADRE*/
+.fila-h1{
+	height: 10%;
+}
+
+/*FILA DE LA QUINTA PARTE DE ALTA DEL CONTENEDOR PADRE*/
+.fila-h2{
+	height: 20%;
+}
+
+.fila-h30{
+	height: 30%;
+}
+
+.fila-h25{
+	height: 25%;
+}
+/*FILA DEL 70% DE ALTA DEL CONTENEDOR PADRE.*/
+.fila-h3{
+	height: 70%;
+}
+
+.fila-h75{
+	height: 75%;
+}
+
+.fila-h4{
+	height: 40%;
+}
+
+/*FILA DEL ALTO DE MITAD DEL CONTENEDOR PADRE.*/
+.fila-h5{
+	height: 50%;
+}
+
+/*FILA DEL OCTAVO DE PARTE DE ALTO DEL CONTENEDOR PADRE.*/
+.fila-h8{
+	height: 12.5%;
+	padding-top: 2%;
+	overflow-x: hidden;
+	font-family: JosefinSans;
+	font-size: 1rem;
+}
+
+.fila-h80{
+	height: 80%;
+}
+
+.fila-h90{
+	height: 90%;
+}
+
+
+/******************************************************************************/
+/**************   FILAS CON MEDIDAS DE HASTA 12 DIVICIONES   ******************/
+/******************************************************************************/
+.r-hm{
+	height: 4.166666666666666%;
+}
+
+.r-h1{
+	height: 8.333333333333333%;
+}
+
+.r-h1m{
+	height: 12.5%;
+}
+
+.r-h2{
+	height: 16.666666666666666%;
+}
+
+.r-h3{
+	height: 25%;
+}
+
+.r-h3m{
+	height: 29.166666666666666%;
+}
+
+.r-h4{
+	height: 33.333333333333333%;
+}
+
+.r-h5{
+	height: 41.666666666666666%;
+}
+
+.r-h6{
+	height: 50%;
+}
+
+.r-h7{
+	height: 58.333333333333333%;
+}
+
+.r-h8{
+	height: 66.666666666666666%;
+}
+
+.r-h9{
+	height: 75%;
+}
+
+.r-h9m{
+	height: 79.166666666666666%;
+}
+
+.r-h10{
+	height: 83.333333333333333%;
+}
+
+.r-h10m{
+	height: 87.5%;
+}
+
+.r-h11{
+	height: 91.666666666666666%;
+}
+
+.r-h12{
+	height: 100%;
+}
+
+/******************************************************************************/
+/********** FIN  **** TERMINAN LAS FILAS DE HASTA 12 DIVISIONES  **************/
+/******************************************************************************/
+
+/*COLUMNA QUE ABARCAR UNA SEXTA PARTE DE ANCHO DEL CONTENDOR PADRE (FILA).*/
+.columna-200{
+	width: 200%;
+}
+
+.columna-ssmall{
+	width: 4%;
+}
+
+.columna-1{
+	width: 8.3333333333%;
+}
+
+.columna-9-con16{
+	width: 9.1666666666666%;
+}
+
+.columna-10{
+	width: 10%;
+}
+
+.columna-12{
+	width: 12.5%;
+}
+
+.columna-2{
+	width: 16.6666666666%;
+}
+
+.columna-25{
+	width: 25%;
+}
+
+.columna-3{
+	width: 20%;
+}
+
+/*COLUMNA QUE ABARCA UNA TERCERA PARTE DE ANCHO DEL CONTENEDOR PADRE (FILA).*/
+.columna-4{
+	width: 33.33333%;
+}
+
+/*COLUMNA QUE ABARCA LA MITAD DEL ANCHO DEL CONTENEDOR PADRE (FILA).*/
+.columna-5{
+	width: 50%;
+}
+
+.columna-45{
+	width: 45%;
+}
+
+.columna-65{
+	width: 65%;
+}
+
+.columna-6{
+	width: 40%;
+}
+
+.columna-90{
+	width: 90%;
+}
+
+/******************************************************************************/
+/**************   COLUMNAS REALMENTE MODIFICADAS PARA 12 TAMAÑOS  *************/
+/******************************************************************************/
+.column-auto{
+	width: auto;
+	height: 100%;
+	display: inline-flex;
+	margin: 0;
+	position: relative;
+}
+
+.column-m-12{
+	width: 4.1666666666666666%;
+}
+
+.column-1-12{
+	width: 8.333333333333333%;
+}
+
+.column-1m-12{
+	width: 12.5%;
+}
+
+.column-2-12{
+	width: 16.666666666666666%;
+}
+
+.column-2m-12{
+	width: 20.833333333333333%;
+}
+
+.column-3-12{
+	width: 25%;
+}
+
+.column-3m-12{
+	width: 29.1666666666666666%;
+}
+
+.column-4-12{
+	width: 33.333333333333333%;
+}
+
+.column-5-12{
+	width: 41.666666666666666%;
+}
+
+.column-6-12{
+	width: 50%;
+}
+
+.column-6m-12{
+	width: 54.1666666666666666%;
+}
+
+.column-7-12{
+	width: 58.333333333333333%;
+}
+
+.column-8-12{
+	width: 66.666666666666666%;
+}
+
+.column-8m-12{
+	width: 70.8333333333333326%;
+}
+
+.column-9-12{
+	width: 75%;
+}
+
+.column-9m-12{
+	width: 79.1666666666666666%;
+}
+
+.column-10-12{
+	width: 83.333333333333333%;
+}
+
+.column-11-12{
+	width: 91.666666666666666%;
+}
+
+.column-11m-12{
+	width: 95.833333333333333%;
+}
+
+.column-12-12{
+	width: 100%;
+}
+/******************************************************************************/
+/********** FIN  **** COLUMNAS REALMENTE MODIFICADAS PARA 12 TAMAÑOS **********/
+/******************************************************************************/
+
+/*MARGEN INTERNO DEL 2% DE SU TAMAÑO ORIGINAL.*/
+.pd-centrado45l{
+	padding-left: 2em;
+}
+
+.pd-center100-40{
+	padding: 0 0 0 17em;
+}
+
+.pd-sm{
+	padding: 2%;
+}
+
+.pd-ssm{
+	box-sizing: border-box;
+	padding: .25em 1em;
+}
+
+.pd-izqsolo{
+	padding-left: 1em;
+}
+
+.pd-izqtop-pq{
+	padding-left: .5em;
+	padding-top: .25em;
+}
+
+.pd-izqtop-men{
+	padding-left: 2em;
+	padding-top: .25em;
+}
+
+.pd-completo-pq{
+	padding: .4em 1em;
+}
+
+.pd-btigual{
+	padding: .25em 0;
+}
+
+.pd-btigual-mitad{
+	padding-top: .5em;
+	padding-bottom: : .5em;
+}
+
+.pd-inull{
+	padding-left: 0;
+	padding-top: .5em;
+}
+
+.pd-null{
+	padding: 0;
+}
+
+.pd-all-small{
+	padding: .1em .3em;
+}
+
+.posicion-h1-cpp{
+	position: absolute;
+	top: -.1em;
+	left: .3em;
+}
+
+.mar-centrado{
+	margin: .8em 1em;
+}
+
+.mar-arr{
+	margin-top: 1%;
+}
+
+.mar-arr-2p{
+	margin-top: 2%;
+}
+
+.mar-aba{
+	margin-bottom: 1%;
+}
+
+.mar-aba-2p{
+	margin-bottom: 2%;
+}
+
+.mar-izq-1p{
+	margin-left: 1%;
+}
+
+.mar-izq{
+	margin-left: 2%;
+}
+
+.mar-der{
+	margin-right: 2%;
+}
+
+.cuerpo-tabla, .wh-completo{
+	width: 100%;
+	display: block;
+	float: left;
+}
+
+.cuerpo-tabla{
+	height: 90%;
+}
+
+.wh-completo{
+	height: 100%;
+}
+
+.sombra-blanca-caja-completa{
+	box-shadow: 0px 0px 10px 5px #FFF;
+	-webkit-box-shadow: 0px 0px 10px 5px #FFF;
+	-moz-box-shadow: 0px 0px 10px 5px #FFF;
+	-o-box-shadow: 0px 0px 10px 5px #FFF;
+}
+
+.sombra-negra-caja-completa{
+	box-shadow: 0px 0px 10px 5px #000;
+	-webkit-box-shadow: 0px 0px 10px 5px #000;
+	-moz-box-shadow: 0px 0px 10px 5px #000;
+	-o-box-shadow: 0px 0px 10px 5px #000;
+}
+
+.sombra-gris-caja-completa{
+	box-shadow: 0px 0px 6px 5px #5D5A5A;
+	-webkit-box-shadow: 0px 0px 6px 5px #5D5A5A;
+	-moz-box-shadow: 0px 0px 6px 5px #5D5A5A;
+	-o-box-shadow: 0px 0px 6px 5px #5D5A5A;
+}
+
+.sombra-letra-blanca{
+	text-shadow: 3px 4px 5px #FFF;
+	-webkit-text-shadow: 3px 4px 5px #FFF;
+	-moz-text-shadow: 3px 4px 5px #FFF;
+	-o-text-shadow: 3px 4px 5px #FFF;
+}
+
+.sombra-letra-negra{
+	text-shadow: 3px 3px 10px #000;
+	-webkit-text-shadow: 3px 3px 10px #000;
+	-moz-text-shadow: 3px 3px 10px #000;
+	-o-text-shadow: 3px 3px 10px #000;
+}
+
+input[type="text"], input[type="date"], textarea, select{
+	padding-top: 12px;
+	padding-left: 10px;
+	font-family: JosefinSans;
+	font-size: 1.2vw;
+	font-weight: lighter;
+	letter-spacing: 1px;
+}
+
+/*BOTONES DE PAGINACION SIMPLE DE LA TABLA DE FACTURACION DIARIA*/
+#atras-factura-diaria, #siguiente-factura-diaria{
+	font-size: 2rem;
+	font-weight: 600;
+	text-align: center;
+	padding: .25% 0 0 0;
+	color: #FFF;
+}
+
+/*PUNTERO DEL MOUSE ENCIMA DE CADA BOTON DE PAGINACION SIMPLE DE FACTURACION DIARIA.*/
+#atras-factura-diaria:hover, #siguiente-factura-factura:hover{
+	color: #000;
+}
+
+/*CONTENEDOR QUE TIENE AL SUBTITULO "TOTAL DE FACTURA" EN EL CONTENEDOR
+DE LA TABLA FACTURACION DIARIA.*/
+#cantidad-total-factura{
+	font-size: 1.3rem;
+	font-weight: 600;
+	text-align: left;
+	padding: .8% 0 0 0;
+}
+
+/* Upload button */
+.upload {
+  display: none;
+}
+.uploader {
+  border: 1px solid #25136A;
+  width: 100%;
+  position: relative;
+  height: 30px;
+  display: flex;
+  display: inline-block;
+  margin-bottom: 0px;
+  top: 0px;
+  border-radius: 2px;
+}
+.uploader .input-value{
+  width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /*line-height: 40px;*/
+  padding-top: 5px;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+.uploader label{
+  cursor: pointer;
+  margin: 0px;
+  width: 20%;
+  height: 28px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background: #c3e3fc url('../img/folder.png') no-repeat center;
+  border-radius: 0px 2px 2px 0px;
+}
+/*FIN DEL INPUT TYPE FILE*/
+
+
+.desactivar, input[disabled="disabled"]{
+	pointer-events: none;
+	opacity: .7;
+	text-align: center;
+}
+
+.invisible_1{
+	opacity: 0;
+}
+
+.invisible_2{
+	display: none;
+}
+
+.fija{
+	position: fixed;
+	z-index: 1200;
+}
+
+/*OBJETO QUE SIRVE DE ADVERTENCIA O AVISO PARA ALGU CAMPO DEL FORMULARIO,
+SU PADRE TIENE QUE SER RELATIVO Y SU HERMANO TIENE QUE SER EL CAMPO A VALIDAD.*/
+.advertencia-formulario{
+	display: none;
+	position: absolute;
+	z-index: 1000;
+	top:105%;
+	left: 40px;
+	width: 200px;
+	height: auto;
+	color: #FFF;
+	background-color: #f2522b;
+	font-family: Overpass;
+	font-size: 10pt;
+	font-weight: 600;
+	padding: 5%;
+	border-top-left-radius: 1px;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	box-shadow: 2px 2px 10px 5px #000;
+	text-align: center;
+}
+
+.animacion_aparecer{
+	animation: aparicion 1s ease-out 0s normal;
+}
+
+.animacion_aumentando{
+	animation: aumento 1s linear 0s normal;
+}
+
+.fondo_aviso_sobresaliente{
+	display:block;
+	position: relative;
+	z-index: 100;
+	background-color: rgba(132,132,132,0.1);
+	width: 100%;
+	height: 100%;
+}
+
+.aviso_sobresaliente{
+	display:block;
+	position: absolute;
+	z-index: 1000;
+	top:35%;
+	left: 35%;
+	width: 30%;
+	height: auto;
+	color: #fff;
+	text-shadow: 5px 5px 6px #000;
+	border: 3px solid #FFF;
+	border-radius: 5px;
+	box-shadow: 3px 3px 10px 7px #FFF;
+	text-align: center;
+	padding: .6em;
+	font-family: Overpass;
+	font-weight: 700;
+	font-style: oblique;
+	font-size: 1.2em;
+}
+
+/*CONTENEDOR QUE SE UTILIZAR PARA AVISAR QUE NO EXITEN RESULTADOS.
+MAYORMENTE UTILIZADO EN LAS TABLAS DE BUSQUEDA.*/
+.avisar_nada{
+	position: relative;
+	z-index: 100;
+	display: block;
+	float: left;
+	height: auto;
+	width: 90%;
+	padding: 3%;
+	margin: 5%;
+	font-size: 1.5rem;
+	font-weight: 300;
+	font-family: JosefinSans;
+	text-align: center;
+	box-shadow: 3px 3px 15px 7px #000;
+	background-color: #f2522b;
+	opacity: .8;
+	color: #FFF;
+}
+
+.msj-oculto{
+	position: relative;
+	z-index: 100;
+	font-size: 1em;
+	font-weight: 400;
+	text-align: center;
+	letter-spacing: .85px;
+	font-family: Overpass;
+	background-color: #d14430;
+	color: #FFF;
+	opacity: .95;
+}
+
+
+.cargando{
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(96,95,101,.7);
+}
+
+.cargando img{
+	display: block;
+	border-radius: 100%;
+	margin: 17em auto;
+	width: 18%;
+	height: 15%;
+	position: relative;
+	z-index: -100;
+	box-shadow: 0 0 10px 6px #000;
+}

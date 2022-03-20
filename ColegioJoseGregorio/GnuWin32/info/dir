@@ -1,0 +1,13 @@
+Dit is het bestand .../info/dir, dat de bovenste pagina van
+de Info-documentenhiërarchie bevat, genaamd '(dir)Top'.
+Info gestart zonder argumenten begint op deze pagina.
+
+File: dir,	Node: Top	Dit is de top van de INFO-boom
+
+  Deze inhoudspagina toont een menu met hoofdonderwerpen.
+  Een "q" sluit het programma af, een "d" brengt u hier terug,
+  "?" toont een hulpvenster met alle Info-commando's,
+  "h" gaat naar een handleiding voor nieuwe gebruikers,
+  "mls<Enter>" toont u de pagina's van het 'ls'-commando, enzovoort.
+
+* Menu:
